@@ -29,18 +29,19 @@
         const string = str.toUpperCase().split('');
         const strArrayReverse = str.toUpperCase().split('').reverse();
 
-        if( JSON.stringify(string) == JSON.stringify(strArrayReverse)){
+        if(string != "" && strArrayReverse  != ""  ){
+            if( JSON.stringify(string) == JSON.stringify(strArrayReverse)){
             document.querySelector('.result').innerHTML = `<p style="color:blue">Ceci est bien un palindrome !</p>`;
-
-        }
-        else if(str == "lili"){
-            document.querySelector('.result').innerHTML = `<p style="color:pink; background-color:black">jtm jtm jtm jtm jtm jtm  </p>`;
-        }
-        else{
+            }
+            else{
             document.querySelector('.result').innerHTML = `<p style="color:red">Ceci n'est pas un palindrome </p>`;
+            }
         }
-        
-    } 
+        else {
+            document.querySelector('.result').innerHTML = '';
+        }
+    }
+
    
     </script>
 </body>
