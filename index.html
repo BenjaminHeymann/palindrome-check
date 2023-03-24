@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Palindrome Test</h1>
+    <input type="text" id="enterPalindrome">
+    <p class="result"></p>
+
+
+
+    <script>
+
+    const enterPalindrome = document.querySelector('#enterPalindrome');
+    
+    enterPalindrome.addEventListener("input", () => {
+      strReverse(enterPalindrome.value);
+    });
+       
+
+
+
+    function strReverse (str) {
+        const string = str.toUpperCase().split('');
+        const strArrayReverse = str.toUpperCase().split('').reverse();
+
+        if( JSON.stringify(string) == JSON.stringify(strArrayReverse)){
+            document.querySelector('.result').innerHTML = `<p style="color:blue">Ceci est bien un palindrome !</p>`;
+
+        }
+        else if(str == "lili"){
+            document.querySelector('.result').innerHTML = `<p style="color:pink; background-color:black">jtm jtm jtm jtm jtm jtm  </p>`;
+        }
+        else{
+            document.querySelector('.result').innerHTML = `<p style="color:red">Ceci n'est pas un palindrome </p>`;
+        }
+        
+    } 
+   
+    </script>
+</body>
+</html>
